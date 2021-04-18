@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import orange from "./rainbow.jpg";
+import orange from "./orange.png";
 import apple from "./apple.png";
 import twitter from "./twitter.png";
 import github from "./github.png";
@@ -175,20 +175,21 @@ const openGithub = (url) => {
     win.focus();
   }
 }
+const openContact = (url) => {
+  const win = window.open("https://t.me/abhimanyu121", '_blank');
+  if (win != null) {
+    win.focus();
+  }
+}
 const TwitterSpan = styled.span``;
 function Home() {
   return (
     <div className="Home">
       <NavDiv>
         
-        <Orange>Orange</Orange>
+        <Orange>Orange Wallet</Orange>
         <SideDiv>
-          <Twitter>
-            <TwitterImg src={twitter} />
-
-            <TwitterSpan>twitter</TwitterSpan>
-          </Twitter>
-          <Contact>contact</Contact>
+          <Contact onClick= {openContact}>contact</Contact>
         </SideDiv>
       </NavDiv>
       <Heading>Welcome to faster Ethereum</Heading>
