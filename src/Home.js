@@ -73,14 +73,12 @@ const AppButton = styled.div`
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   animation: Orange-button 2s infinite;
   border-radius: 18px;
-  box-shadow: 0 5px 15px rgb(0 248 255 / 40%), 0 10px 30px rgb(37 41 46 / 20%);
-  cursor: pointer;
-  display: block;
+  cursor: text;
   height: 63px;
   margin: 0 12px 24px 12px;
-  position: relative;
   transition: 0.125s ease;
-  width: 177px;
+  width: 231px;
+  will-change: transform;
   background: url(images/app-store-button.svg) #000000 center no-repeat;
   border-radius: 15.5px;
   height: 58px;
@@ -91,13 +89,20 @@ const AppDiv = styled.div`
   margin-top: 0.3rem;
 `;
 const AppleSpan = styled.span`
+  padding-top: 10rem;
   font-size: 1.3rem;
   padding-left: 1rem;
+  text-align: bottom;
 `;
-const AppSpan = styled.span``;
+const AppSpan = styled.span`
+  padding-top: 10rem;
+  font-size: 1.3rem;
+  padding-left: 1rem;
+  text-align: bottom;
+`;
 const AndroidButton = styled.div`
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  background-color: #ececee;
+  background-color: #4285F4;
   border-radius: 18px;
   cursor: text;
   height: 63px;
@@ -136,6 +141,7 @@ const Apple = styled.img`
   height: 2rem;
   padding-top: 0.6rem;
   padding-left: 0.3rem;
+
 `;
 const AppleDiv = styled.div`
   display: flex;
@@ -144,8 +150,8 @@ const JoinSpan = styled.span`
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   background-color: transparent;
   border: none;
-  caret-color: #a42fff;
-  color: rgba(60, 66, 82, 0.6);
+  caret-color: #ffffff;
+  color: #0000000;
   font-family: "Graphik", "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: 600;
@@ -155,7 +161,7 @@ const JoinSpan = styled.span`
 `;
 const PlaySpan = styled.span`
   caret-color: #a42fff;
-  color: #c0c0c0;
+  color: #ffffff;
   font-family: "Graphik", "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 1.4rem;
   font-weight: 600;
@@ -181,15 +187,21 @@ const openContact = (url) => {
     win.focus();
   }
 }
+const openPlayStore = (url) => {
+  const win = window.open("https://play.google.com/store/apps/details?id=org.orange.wallet", '_blank');
+  if (win != null) {
+    win.focus();
+  }
+}
 const TwitterSpan = styled.span``;
 function Home() {
   return (
     <div className="Home">
       <NavDiv>
-        
+
         <Orange>Orange Wallet</Orange>
         <SideDiv>
-          <Contact onClick= {openContact}>contact</Contact>
+          <Contact onClick={openContact}>contact</Contact>
         </SideDiv>
       </NavDiv>
       <Heading>Welcome to faster Ethereum</Heading>
@@ -198,12 +210,12 @@ function Home() {
           <AppleDiv>
             <Apple src={apple} />
             <AppDiv>
-              <AppSpan>Download on </AppSpan>
-              <AppleSpan>App store</AppleSpan>
+              <AppleSpan>Coming<br /></AppleSpan>
+              <AppleSpan>soon</AppleSpan>
             </AppDiv>
           </AppleDiv>
         </AppButton>
-        <AndroidButton>
+        <AndroidButton onClick={openPlayStore}>
           <JoinSpan>Download on </JoinSpan>
           <PlaySpan>PlayStore</PlaySpan>
         </AndroidButton>
@@ -211,7 +223,7 @@ function Home() {
       <OrangeImage src={orange} />
       <FooterDiv>
         <Github
-        onClick= {openGithub}>
+          onClick={openGithub}>
           <TwitterSpan>
             <TwitterImg src={github} />
           </TwitterSpan>
@@ -219,7 +231,7 @@ function Home() {
         </Github>
         <FooterOrange></FooterOrange>
       </FooterDiv>
-    </div>
+    </div >
   );
 }
 
