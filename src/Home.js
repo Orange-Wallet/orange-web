@@ -68,22 +68,24 @@ const ButtonDiv = styled.div`
   justify-content: center;
   margin-bottom: 30px;
   transition: 0.125s ease;
+  text-align: center;
 `;
-const AppButton = styled.div`
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  animation: Orange-button 2s infinite;
+const AppButton = styled.span`
   border-radius: 18px;
-  cursor: text;
+  will-change: transform;
+  background: url(images/app-store-button.svg) #000000 center no-repeat;
+  color: white;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  border-radius: 18px;
   height: 63px;
+  border-width: 0px;
   margin: 0 12px 24px 12px;
   transition: 0.125s ease;
   width: 231px;
+  text-align: center;
+  justify-content: center;
   will-change: transform;
-  background: url(images/app-store-button.svg) #000000 center no-repeat;
-  border-radius: 15.5px;
-  height: 58px;
-  width: 172px;
-  color: white;
+
 `;
 const AppDiv = styled.div`
   margin-top: 0.3rem;
@@ -92,7 +94,7 @@ const AppleSpan = styled.span`
   padding-top: 10rem;
   font-size: 1.3rem;
   padding-left: 1rem;
-  text-align: bottom;
+  text-align: center;
 `;
 const AppSpan = styled.span`
   padding-top: 10rem;
@@ -100,17 +102,20 @@ const AppSpan = styled.span`
   padding-left: 1rem;
   text-align: bottom;
 `;
-const AndroidButton = styled.div`
+const AndroidButton = styled.span`
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   background-color: #4285F4;
   border-radius: 18px;
-  cursor: text;
   height: 63px;
+  border-width: 0px;
   margin: 0 12px 24px 12px;
   transition: 0.125s ease;
   width: 231px;
   will-change: transform;
+  text-align: center;
 `;
+
+
 const OrangeImage = styled.img`
   position: absolute;
   width: 100%;
@@ -145,6 +150,7 @@ const Apple = styled.img`
 `;
 const AppleDiv = styled.div`
   display: flex;
+  text-align: center;
 `;
 const JoinSpan = styled.span`
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -201,7 +207,7 @@ function Home() {
 
         <Orange>Orange Wallet</Orange>
         <SideDiv>
-          <Contact onClick={openContact}>contact</Contact>
+          <Contact onClick={openContact} style={{ cursor: 'pointer' }}>contact</Contact>
         </SideDiv>
       </NavDiv>
       <Heading>Welcome to faster Ethereum</Heading>
@@ -215,7 +221,7 @@ function Home() {
             </AppDiv>
           </AppleDiv>
         </AppButton>
-        <AndroidButton onClick={openPlayStore}>
+        <AndroidButton onClick={openPlayStore} style={{ cursor: 'pointer' }}>
           <JoinSpan>Download on </JoinSpan>
           <PlaySpan>PlayStore</PlaySpan>
         </AndroidButton>
@@ -223,7 +229,7 @@ function Home() {
       <OrangeImage src={orange} />
       <FooterDiv>
         <Github
-          onClick={openGithub}>
+          onClick={openGithub} style={{ cursor: 'pointer' }}>
           <TwitterSpan>
             <TwitterImg src={github} />
           </TwitterSpan>
