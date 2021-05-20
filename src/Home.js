@@ -83,6 +83,7 @@ const AppButton = styled.span`
   transition: 0.125s ease;
   width: 231px;
   text-align: center;
+  align: "center"
   justify-content: center;
   will-change: transform;
 
@@ -151,6 +152,7 @@ const Apple = styled.img`
 const AppleDiv = styled.div`
   display: flex;
   text-align: center;
+  margin: 0rem 2rem;
 `;
 const JoinSpan = styled.span`
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
