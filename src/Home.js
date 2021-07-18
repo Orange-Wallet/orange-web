@@ -209,7 +209,7 @@ function Home() {
 
         <Orange>Orange Wallet</Orange>
         <SideDiv>
-          <Contact onClick={openContact} style={{ cursor: 'pointer' }}>contact</Contact>
+          <Contact onClick={openContact} style={{ cursor: 'pointer' }}>Contact</Contact>
         </SideDiv>
       </NavDiv>
       <Heading>Welcome to faster Ethereum</Heading>
@@ -228,7 +228,7 @@ function Home() {
           <PlaySpan>PlayStore</PlaySpan>
         </AndroidButton>
       </ButtonDiv>
-      <OrangeImage src={orange} />
+      <OrangeImage src={require("./orange.png").default} />
       <FooterDiv>
         <Github
           onClick={openGithub} style={{ cursor: 'pointer' }}>
